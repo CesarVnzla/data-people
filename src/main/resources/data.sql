@@ -1,0 +1,10 @@
+insert into people (name,lastname,age,document,email) values ('Cesar', 'Reinoso', 20, '95945483', 'cesar@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Carlos', 'Perez', 23, '30945423', 'carlos@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Andrea', 'Aguilar', 51, '31945490', 'andrea@gmail.com');
+insert into people (name,lastname,age,document,email) values ('German', 'Alzina', 34, '22945434', 'german@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Carla', 'Mendoza', 55, '50945422', 'carla@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Juan', 'Perez', 21, '54945466', 'juan@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Cristian', 'Fuentes', 26, '44945400', 'cristian@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Jose ', 'Lara', 30, '65945454', 'jose@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Antoni', 'Mendoza', 45, '33945443', 'antoni@gmail.com');
+insert into people (name,lastname,age,document,email) values ('Lina', 'caracas', 32, '11945422', 'lina@gmail.com');
