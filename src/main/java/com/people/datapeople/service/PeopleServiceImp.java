@@ -49,8 +49,9 @@ public class PeopleServiceImp implements PeopleService{
     }
 
     @Override
-    public void update(PeopleDTO peopleDTO) {
+    public void update(PeopleDTO peopleDTO, Long id) {
         People people = mapper.convertValue(peopleDTO, People.class);
+        people.setId(id);
         peopleDAO.save(people);
     }
 

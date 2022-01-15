@@ -12,7 +12,7 @@ public interface PeopleService {
 
     public void save(PeopleDTO people);
 
-    public void update(PeopleDTO people);
+    public void update(PeopleDTO people, Long id);
 
     public void delete(Long id);
 }
