@@ -21,6 +21,10 @@ public class PeopleServiceImp implements PeopleService{
 
     private ObjectMapper mapper = new ObjectMapper();
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<PeopleDTO> findAll() {
 
