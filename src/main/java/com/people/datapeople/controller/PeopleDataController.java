@@ -4,6 +4,7 @@ package com.people.datapeople.controller;
 import com.people.datapeople.exception.ExceptionValidation;
 import com.people.datapeople.model.dto.PeopleDTO;
 import com.people.datapeople.service.PeopleService;
+import com.people.datapeople.validation.Validation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -20,7 +21,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 import static com.people.datapeople.utility.Constants.*;
-import static com.people.datapeople.validation.Validation.*;
 
 @Controller
 @RequestMapping(REQUEST_MAPPING_PATH)
@@ -29,6 +29,9 @@ public class PeopleDataController {
 
     @Autowired
     private PeopleService peopleService;
+
+    @Autowired
+    private Validation validation;
 
     @Operation(summary = OPERATION_GET_PEOPLE)
     @ApiResponses(value = {
@@ -65,8 +68,8 @@ public class PeopleDataController {
     public ResponseEntity<Void> createPeople(@Valid @RequestBody PeopleDTO people, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
-            String message = validateCreate(bindingResult);
-            throw new ExceptionValidation(message);
+            String message = validation.validateCreate(bindingResult);
+            throw new ExceptionValidation(EXCEPTION_VALIDATION_CODE, message);
         }
         peopleService.save(people);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
@@ -78,10 +81,10 @@ public class PeopleDataController {
             @ApiResponse(responseCode = CODE_RESPONSE_BAD_REQUEST, description = MESSAGE_RESPONSE_BAD_REQUEST),
             @ApiResponse(responseCode = CODE_RESPONSE_NOT_FOUND, description = MESSAGE_RESPONSE_NOT_FOUND)})
     @PatchMapping(PATH_GET_UPDATE_DELETE_PEOPLE_BY_ID)
-    public ResponseEntity<Void> updatePeople(@Valid @RequestBody PeopleDTO people,@PathVariable Long id, BindingResult bindingResult){
+    public ResponseEntity<Void> updatePeople(@Valid @RequestBody PeopleDTO people, BindingResult bindingResult, @PathVariable Long id){
         if (bindingResult.hasErrors()) {
-            String message = validateCreate(bindingResult);
-            throw new ExceptionValidation(message);
+            String message = validation.validateCreate(bindingResult);
+            throw new ExceptionValidation(EXCEPTION_VALIDATION_CODE, message);
         }
         peopleService.update(people, id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

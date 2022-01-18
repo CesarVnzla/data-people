@@ -8,8 +8,17 @@ public class Constants {
     public static final Integer E_GENERAL_EXCEPTION_CODE=500;
     public static final String E_GENERAL_EXCEPTION="Error: %s";
 
-    public static final Integer CAMPO_EXCEPTION_CODE=400;
-    public static final String CAMPO_EXCEPTION="El campo: %s";
+    public static final Integer EXCEPTION_VALIDATION_CODE=400;
+    public static final String EXCEPTION_VALIDATION_MESSAGE="El campo: %s";
+    public static final String SEPARATOR="; nested exception is";
+
+    public static final Integer CODE_BUSINIESS_EXCEPTION=200;
+    public static final Integer CODE_CONNECTION_EXCEPTION=500;
+    public static final String MESSAGE_GETLIST_EXCEPTION="Error al consultar la lista de personas";
+    public static final String MESSAGE_FINDBYID_EXCEPTION="No se encontro la persona con el ID: ";
+    public static final String MESSAGE_SAVE_EXCEPTION="Error al registrar la persona del ID: ";
+    public static final String MESSAGE_UPDATE_EXCEPTION="Error al actualizar los datos del ID: ";
+    public static final String MESSAGE_DELETE_EXCEPTION="Error al eliminar los datos del ID: ";
 
     public static final String VALIDATE_LONGITUD=" debe tener una longitud entre 4 y 20 caracteres";
     public static final String VALIDATE_LONGITUD_DOCUMENT=" debe tener una longitud entre 9 y 11 caracteres";
