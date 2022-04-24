@@ -50,6 +50,7 @@ class PeopleDataControllerTest {
     }
 
     @Test
+    @DisplayName("probando la consulta de personas Registradas en la DB")
     void getPeople() {
         List<PeopleDTO> result;
         given(peopleService.findAll()).willReturn(peopleDTOList);
@@ -58,6 +59,7 @@ class PeopleDataControllerTest {
     }
 
     @Test
+    @DisplayName("probando la busqueda de una persona por su ID")
     void getPeoplebyId() {
         PeopleDTO result;
         given(peopleService.findById(Mockito.any())).willReturn(people);
@@ -66,11 +68,13 @@ class PeopleDataControllerTest {
     }
 
     @Test
+    @DisplayName("probando el registro de una persona")
     void createPeople() {
         peopleService.save(people);
     }
 
     @Test
+    @DisplayName("probando la actualizacion de los datos de una persona")
     void updatePeople() {
         PeopleDTO peopleUpdate = new PeopleDTO();
         peopleUpdate.setEmail("cesar15@gmail.com");
@@ -78,6 +82,7 @@ class PeopleDataControllerTest {
     }
 
     @Test
+    @DisplayName("probando la eliminacion de los datos de una persona en la DB")
     void deletePeople() {
         peopleService.delete(1L);
     }
